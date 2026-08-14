@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>បណ្ណាល័យ - FREE BOOKS</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="LibraryStyle.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <a href="/HomePage/index.html" class="logo">
+      <div>
+        <div class="logo-text">
+          <span class="live">MY</span> <span class="teaching">BOOKSHELF</span>
+        </div>
+        <div class="logo-khmer">free book</div>
+      </div>
+    </a>
+
+    <nav>
+      <ul id="navMenu">
+        <li><a href="/HomePage/index.html">ទំព័រដើម</a></li>
+        <li><a href="/NewsPage/NewsPage.html">ព័ត៌មានថ្មី</a></li>
+        <li><a href="/LibraryPage/Library.html" class="active">បណ្ណាល័យ</a></li>
+        <li><a href="/ContactPage/ContactPage.html">ទំនាក់ទំនង</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-icons">
+      <a target="_blank" title="ជំនួយការ" href="/AI CHAT/public/index.html"><i class="as"></i>🤖</a>
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== BANNER ==================== -->
+  <section class="page-banner">
+    <h1>បណ្ណាល័យឌីជីថល (Digital Library)</h1>
+    <p>ស្វែងរក និងទាញយកសៀវភៅសិក្សា សៀវភៅអានកម្សាន្ត និងឯកសារស្រាវជ្រាវដោយឥតគិតថ្លៃ</p>
+    
+    <div class="search-box">
+      <input type="text" placeholder="ស្វែងរកឈ្មោះសៀវភៅ ឬមុខវិជ្ជា...">
+      <button><i class="fas fa-search"></i> ស្វែងរក</button>
+    </div>
+  </section>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="section">
+
+    <!-- Filter Buttons -->
+    <div class="filter-container">
+      <button class="filter-btn active">ទាំងអស់</button>
+      <button class="filter-btn">សៀវភៅពុម្ព</button>
+      <button class="filter-btn">សៀវភៅលំហាត់</button>
+      <button class="filter-btn">វិញ្ញាសាប្រឡង</button>
+      <button class="filter-btn">ចំណេះដឹងទូទៅ</button>
+    </div>
+
+    <!-- Books Grid -->
+    <div class="books-grid">
+
+      <!-- Book 1 -->
+      <div class="book-card">
+        <div class="book-cover">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <div class="book-details">
+          <div>
+            <div class="book-tag">សៀវភៅពុម្ព</div>
+            <h3 class="book-title">គណិតវិទ្យា ថ្នាក់ទី ១២</h3>
+            <p class="book-desc">សៀវភៅសិក្សាគោលសម្រាប់សិស្សានុសិស្សថ្នាក់ទី ១២</p>
+          </div>
+          <div class="book-actions">
+            <a href="#" class="btn-action btn-read"><i class="fas fa-eye"></i> អាន</a>
+            <a href="#" class="btn-action btn-download"><i class="fas fa-download"></i> ទាញយក</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="book-card">
+        <div class="book-cover">
+          <i class="fas fa-atom"></i>
+        </div>
+        <div class="book-details">
+          <div>
+            <div class="book-tag">សៀវភៅលំហាត់</div>
+            <h3 class="book-title">រូបវិទ្យា ថ្នាក់ទី ១១</h3>
+            <p class="book-desc">ប្រមូលផ្តុំលំហាត់ និងដំណោះស្រាយគំរូសម្រាប់ស្រាវជ្រាវ</p>
+          </div>
+          <div class="book-actions">
+            <a href="#" class="btn-action btn-read"><i class="fas fa-eye"></i> អាន</a>
+            <a href="#" class="btn-action btn-download"><i class="fas fa-download"></i> ទាញយក</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 3 -->
+      <div class="book-card">
+        <div class="book-cover">
+          <i class="fas fa-flask"></i>
+        </div>
+        <div class="book-details">
+          <div>
+            <div class="book-tag">វិញ្ញាសាប្រឡង</div>
+            <h3 class="book-title">គីមីវិទ្យា ត្រៀមឌីប្លូម (ទី៩)</h3>
+            <p class="book-desc">សំណួរ-ចម្លើយ និងវិញ្ញាសាជ្រើសរើសសម្រាប់ត្រៀមប្រឡង</p>
+          </div>
+          <div class="book-actions">
+            <a href="#" class="btn-action btn-read"><i class="fas fa-eye"></i> អាន</a>
+            <a href="#" class="btn-action btn-download"><i class="fas fa-download"></i> ទាញយក</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 4 -->
+      <div class="book-card">
+        <div class="book-cover">
+          <i class="fas fa-globe-asia"></i>
+        </div>
+        <div class="book-details">
+          <div>
+            <div class="book-tag">ចំណេះដឹងទូទៅ</div>
+            <h3 class="book-title">ប្រវត្តិវិទ្យា និងភូមិវិទ្យា</h3>
+            <p class="book-desc">ឯកសារពិគ្រោះបន្ថែមសម្រាប់ស្វ័យសិក្សា</p>
+          </div>
+          <div class="book-actions">
+            <a href="#" class="btn-action btn-read"><i class="fas fa-eye"></i> អាន</a>
+            <a href="#" class="btn-action btn-download"><i class="fas fa-download"></i> ទាញយក</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <span class="live">MY</span> <span class="teaching">BOOKSHELF</span>
+        </div>
+        <p style="font-size: 13px; color: #94a3b8; margin-top: 8px;">
+          គេហទំព័រចែករំលែកសៀវភៅ និងប្រភពស្វ័យសិក្សាដោយឥតគិតថ្លៃ។
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h3>តំណភ្ជាប់រហ័ស</h3>
+        <ul>
+          <li><a href="/NewsPage/NewsPage.html">ព័ត៏មានថ្មីៗ</a></li>
+          <li><a href="/LibraryPage/Library.html">បណ្ណាល័យ</a></li>
+          <li><a href="/ContactPage/ContactPage.html">ទំនាក់ទំនង</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>អំពីសេវាកម្ម</h3>
+        <p style="font-size: 13px; color: #94a3b8; line-height: 1.6;">
+          សូមអានលក្ខខណ្ឌនៃការប្រើប្រាស់ និងគោលការណ៍ឯកជនភាពមុនពេលប្រើប្រាស់សេវាកម្ម។
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>My Bookshelf © 2026 - All Rights Reserved</p>
+      <div style="margin-top: 6px;">
+        <a href="/PrivacyPolicy/PrivacyPolicy.html">Privacy Policy</a> |
+        <a href="/TermsOfService/TermsOfService.html">Terms of Service</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-xmark');
+    });
+  </script>
+</body>
+</html>

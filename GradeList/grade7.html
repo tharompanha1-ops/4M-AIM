@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sekhalay - សិក្ខាល័យ</title>
+<!-- ទាញយក Google Fonts សម្រាប់ភាសាខ្មែរ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300..700;1,300..700&family=Koh+Santepheap:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-light: #2563eb;
+    --accent: #f59e0b;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    /* ប្រើ Font Kantumruy Pro សម្រាប់អត្ថបទសទូទៅ */
+    font-family: 'Noto Sans Khmer', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color:#c1e2ec54;
+    color: var(--text-main);
+    line-height: 1.6;
+    padding-bottom: 40px;
+  }
+
+  /* Header Navbar */
+  header {
+    background:  linear-gradient(135deg, #1349b7 0%, #2095b6 100%);
+    color: white;
+    padding: 16px 24px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    /* ប្រើ Font Koh Santepheap សម្រាប់ Logo & Headings */
+    font-family: 'Koh Santepheap', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo span {
+    background: var(--accent);
+    color: #000;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-family: 'Kantumruy Pro', sans-serif;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: #ffffff;
+  }
+
+  /* Hero Banner */
+  .hero {
+    background: linear-gradient(180deg, rgba(201, 213, 238, 0.405) 0%, rgba(40, 46, 61, 0.617) 100%);
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+  }
+
+  .hero h1 {
+    font-family: 'Koh Santepheap', serif;
+    color: #ffffff;
+    font-size: 36px;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
+  .hero p {
+    font-family: 'Koh Santepheap', serif;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 24px auto;
+    opacity: 0.9;
+  }
+
+  .btn-primary {
+    background:linear-gradient(135deg, #b9efdf 2%, #40bcde 50%);
+    color: #2d0707;
+    padding: 12px 28px;
+    border: 1px solid #578b9a;
+    border-radius: 27px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: #ea580c;
+    color: #ffffff;
+    border-color: #ea580c;
+    border: 1px solid #ffedd5;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+    transform: translateY(-2px);
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-family: 'Koh Santepheap', serif;
+    font-size: 24px;
+    color: var(--primary);
+    margin-bottom: 24px;
+    border-left: 4px solid var(--accent);
+    padding-left: 12px;
+  }
+
+  /* Cards Grid */
+  .subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 50px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 27px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: fixed linear-gradient(135deg, #b9efdf51 5%, #a5d9e831 2%);
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border-color: #ea580c;
+    
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    background: #eff6ff;
+    color: var(--primary-light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .card h3 {
+    font-family: 'Koh Santepheap', serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--text-main);
+  }
+
+  .card p {
+    font-family: 'Kantumruy Pro', sans-serif;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+  }
+
+  .card-link {
+    color: #175eaa;
+    text-decoration: none;
+    font-weight: 600;
+    gap: 8px;
+  }
+
+
+  
+
+  /* Footer */
+  footer {
+    font-family: 'Kantumruy Pro', sans-serif;
+    background: #0f172a;
+    color: #94a3b8;
+    padding: 40px 20px 20px 20px;
+    margin-top: 60px;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #334155;
+  }
+
+  .footer-col h4 {
+    color: white;
+    font-family: 'Koh Santepheap', serif;
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .footer-col p, .footer-col li {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col a {
+    color: #94a3b8;
+    text-decoration: none;
+  }
+
+  .footer-col a:hover {
+    color: white;
+  }
+
+  .copyright {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 13px;
+  }
+  .btn-chatbot{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .btn-chatbot a{
+    color: #cbd5e1;
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(225, 204, 204, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(7, 4, 3, 0.25);
+  }
+  .btn-chatbot a:hover{
+    color: #ffffff;
+    background: #16a34a;
+    transform: translateY(3px) translateX(-3px);
+    font-size: 18px;
+    width: 42px;
+    height: 42px;
+    box-shadow: 0 4px 12px rgba(83, 213, 185, 0.25);
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        ថ្នាក់ទី ០៧ <span>Grade 07</span>
+      </a>
+      <div class="btn-chatbot">
+        <a target="_blank" title="ជំនួយការ" href="">🤖</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>ស្វាគមន៍មកកាន់ថ្នាក់ទី ០៧  </h1>
+    <p>គាំទ្រការរៀនដោយស៊ីជម្រៅ និងលើកកម្ពស់លទ្ធផលនៃការសិក្សារបស់អ្នក</p>
+    <a href="#subjects" class="btn-primary"> ត្រឡប់ក្រោយវិញ</a>
+  </section><br>
+
+  <!-- Main Content -->
+  <main class="container" id="subjects">
+    <h2 class="section-title">មុខវិជ្ជាទាំងអស់</h2><br>
+
+    <div class="subject-grid">
+      <div class="card">
+        <div class="card-icon">📐</div>
+        <h3>គណិតវិទ្យា</h3>
+        <p>សិក្សាអំពីពីជគណិត ធរណីមាត្រ និងការគណនាផ្សេងៗ។</p>
+        <div class="card-meta">
+          <span>២២ ជំពូក</span>
+          <a href="/subject/69" class="card-link">ចូលរៀន</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📚</div>
+        <h3>អក្សរសាស្រ្តខ្មែរ</h3>
+        <p>សិក្សាអំពីអក្សរសិល្ប៍ វ៉េយ្យាករណ៍ និងការតែងនិពន្ធ។</p>
+        <div class="card-meta">
+          <span>១០ ជំពូក</span>
+          <a href="/subject/68" class="card-link">ចូលរៀន</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🖼️</div>
+        <h3>ភាសាអង់គ្លេស</h3>
+        <p>សិក្សាអំពីលក្ខណៈភូមិសាស្ត្រ ប្រជាសាស្ត្រ និងសេដ្ឋកិច្ច។</p>
+        <div class="card-meta">
+          <span>៤ ជំពូក</span>
+          <a href="/subject/72" class="card-link">ចូលរៀន</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>រូបវិទ្យា</h3>
+        <p>សិក្សាអំពីចលនា ថាមពល អគ្គិសនី និងរូបវិទ្យាទំនើប។</p>
+        <div class="card-meta">
+          <span>៤ ជំពូក</span>
+          <a href="/subject/65" class="card-link">ចូលរៀន</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🧪</div>
+        <h3>គីមីវិទ្យា</h3>
+        <p>សិក្សាអំពីធាតុគីមី ប្រតិកម្ម និងសមាសធាតុផ្សេងៗ។</p>
+        <div class="card-meta">
+          <span>៣ ជំពូក</span>
+          <a href="/subject/67" class="card-link">ចូលរៀន</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🧬</div>
+        <h3>ជីវវិទ្យា</h3>
+        <p>សិក្សាអំពីជីវិត កោសិកា សែន និងប្រព័ន្ធបរិស្ថាន។</p>
+        <div class="card-meta">
+          <span>៥ ជំពូក</span>
+          <a href="/subject/66" class="card-link">ចូលរៀន</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3>ផែនដីវិទ្យា</h3>
+        <p>សិក្សាអំពីភពផែនដី បរិយាកាស និងធនធានធម្មជាតិ។</p>
+        <div class="card-meta">
+          <span>៣ ជំពូក</span>
+          <a href="/subject/71" class="card-link">ចូលរៀន</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📜</div>
+        <h3>ប្រវត្តិវិទ្យា</h3>
+        <p>សិក្សាអំពីប្រវត្តិសាស្ត្រជាតិ និងអន្តរជាតិ សកលលោក និងព្រឹត្តិការណ៍សំខាន់ៗ។</p>
+        <div class="card-meta">
+          <span>៣ ជំពូក</span>
+          <a href="/subject/64" class="card-link">ចូលរៀន</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">🏛️</div>
+        <h3>សីលធម៌-ពលរដ្ឋ</h3>
+        <p>សិក្សាអំពីសីលធម៌រស់នៅ សិទ្ធិ និងកាតព្វកិច្ចពលរដ្ឋ។</p>
+        <div class="card-meta">
+          <span>៦ ជំពូក</span>
+          <a href="/subject/70" class="card-link">ចូលរៀន</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🗺️</div>
+        <h3>ភូមិវិទ្យា</h3>
+        <p>សិក្សាអំពីលក្ខណៈភូមិសាស្ត្រ ប្រជាសាស្ត្រ និងសេដ្ឋកិច្ច។</p>
+        <div class="card-meta">
+          <span>៤ ជំពូក</span>
+          <a href="/subject/72" class="card-link">ចូលរៀន</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>អំពី សិក្ខាល័យ</h4>
+        <p>ឯកសារទាំងអស់នៅលើវេបសាយនេះគឺឥតគិតថ្លៃ និងអាចប្រើប្រាស់បានគ្រប់ៗគ្នា។</p>
+      </div>
+      <div class="footer-col">
+        <h4>តំណភ្ជាប់</h4>
+        <ul>
+          <li><p>ទំព័រដើម/<a href="#"> home page</a></p></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; MY BOOKSHELF — រក្សាសិទ្ធិគ្រប់យ៉ាង។
+    </div>
+  </footer>
+
+</body>
+</html>
